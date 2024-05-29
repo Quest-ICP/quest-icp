@@ -1,0 +1,5 @@
+[workspace]
+members = [
+    "src/quest-icp-backend"
+]
+resolver = "2"

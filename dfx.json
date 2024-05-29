@@ -1,0 +1,27 @@
+{
+  "canisters": {
+    "quest-icp-backend": {
+      "candid": "src/quest-icp-backend/quest-icp-backend.did",
+      "package": "quest-icp-backend",
+      "type": "rust"
+    },
+    "quest-icp-frontend": {
+      "dependencies": [
+        "quest-icp-backend"
+      ],
+      "source": [
+        "src/quest-icp-frontend/dist"
+      ],
+      "type": "assets",
+      "workspace": "quest-icp-frontend"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}
