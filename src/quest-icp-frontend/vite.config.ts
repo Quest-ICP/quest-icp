@@ -3,6 +3,7 @@ import { defineConfig } from 'vite';
 import environment from 'vite-plugin-environment';
 import vue from '@vitejs/plugin-vue';
 import dotenv from 'dotenv';
+import { quasar, transformAssetUrls } from '@quasar/vite-plugin';
 
 dotenv.config({ path: '../../.env' });
 
@@ -26,7 +27,12 @@ export default defineConfig({
     },
   },
   plugins: [
-    vue(),
+    vue({
+      template: { transformAssetUrls }
+    }),
+    quasar({
+      // sassVariables: 'src/quasar-variables.sass'
+    }),
     environment('all', { prefix: 'CANISTER_' }),
     environment('all', { prefix: 'DFX_' }),
   ],

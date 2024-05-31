@@ -14,5 +14,7 @@
   "type": "module",
   "workspaces": [
     "src/quest-icp-frontend"
-  ]
+  ],
+  "dependencies": {
+  }
 }
