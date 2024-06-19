@@ -7,30 +7,23 @@ const router = createRouter({
   routes: [
     {
       path: '/',
-      name: 'home',
-      component: () => import('../layouts/MainLayout.vue'),
-      children: [{ path: '/', name: "HomeView", component: () => import('@/views/HomeView.vue') }],
+      component: () => import('@/layouts/MainLayout.vue'),
+      children: [{ path: '/', component: () => import('@/views/HomeView.vue') }],
     },
     {
       path: '/questions',
-      name: "questions",
-      component: () => import('../layouts/MainLayout.vue'),
-      children: [{ path: '/', name:'questions', component: () => import('@/views/NotFoundView.vue') }],
+      component: () => import('@/layouts/MainLayout.vue'),
+      children: [{ path: '/questions', component: () => import('@/views/NotFoundView.vue') }],
     },
     {
       path: '/discussions',
-      component: () => import('../layouts/MainLayout.vue'),
-      children: [{ path: '/', name: 'discussions', component: () => import('@/views/NotFoundView.vue') }],
+      component: () => import('@/layouts/MainLayout.vue'),
+      children: [{ path: '/discussions', component: () => import('@/views/NotFoundView.vue') }],
     },
     {
       path: '/governance',
-      component: () => import('../layouts/MainLayout.vue'),
-      children: [{ path: '/', name: 'governance', component: () => import('@/views/NotFoundView.vue') }],
-    },
-    {
-      path: '/:pathMatch(.*)*',
-      name: 'notfound',
-      component: NotFoundView,
+      component: () => import('@/layouts/MainLayout.vue'),
+      children: [{ path: '/governance', component: () => import('@/views/NotFoundView.vue') }],
     }
   ]
 });
